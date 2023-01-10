@@ -7,17 +7,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './view-layer/home/home.component';
+import { MessagesComponent } from './view-layer/messages/messages.component';
+import { HomeSmartComponent } from './smart-layer/home-smart/home-smart.component';
+import { MessagesSmartComponent } from './smart-layer/messages-smart/messages-smart.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MessagesComponent,
+    HomeSmartComponent,
+    MessagesSmartComponent
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}, {}),
     BrowserAnimationsModule,
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
