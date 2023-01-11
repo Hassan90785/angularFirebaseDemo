@@ -1,1 +1,39 @@
-<p>messages works!</p>
+<div class="container mt-4 ">
+  <mat-card class="mat-elevation-z2">
+    <mat-toolbar>
+      <span>Messages</span>
+      <button mat-raised-button color="warn" (click)="addMessage()">Add Message</button>
+    </mat-toolbar>
+    <mat-card-content>
+      <div class="row my-3">
+        <div class="col">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
+
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID</th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name</th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Message Column -->
+            <ng-container matColumnDef="message">
+              <th mat-header-cell *matHeaderCellDef> Message</th>
+              <td mat-cell *matCellDef="let element"> {{element.messsage}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
