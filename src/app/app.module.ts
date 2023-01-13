@@ -20,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
+import { AddNewMessageComponent } from './view-layer/add-new-message/add-new-message.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatTableModule} from "@angular/material/table";
     HomeComponent,
     MessagesComponent,
     HomeSmartComponent,
-    MessagesSmartComponent
+    MessagesSmartComponent,
+    AddNewMessageComponent
   ],
   imports: [
     BrowserModule,
